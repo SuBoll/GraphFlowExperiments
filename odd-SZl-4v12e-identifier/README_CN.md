@@ -73,7 +73,8 @@ python szl_odd_solver.py
 
 称 $\beta:V(G)\to\mathbb{Z}_l$ 为合法边界（boundary），当且仅当：
 
-- $$
+-
+$$
 \beta(v)\in \{0,1,\dots,l-1\}
 $$
 - $\sum_{v\in V}\beta(v)\equiv 0\pmod l$
