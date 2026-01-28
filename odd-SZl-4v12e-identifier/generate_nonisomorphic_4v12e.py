@@ -16,7 +16,10 @@ import numpy as np
 # ---------- Dynamic import: SZlOddSolver (odd modulus) ----------
 
 def load_szl_odd_solver_class() -> type:
-    here = os.path.dirname(os.path.abspath(__file__))
+    try:
+        here = os.path.dirname(os.path.abspath(__file__))
+    except NameError:
+        here = os.getcwd()
     solver_path = os.path.join(here, "szl_odd_solver.py")
     spec = importlib.util.spec_from_file_location("szl_odd_solver_module", solver_path)
     if spec is None or spec.loader is None:
