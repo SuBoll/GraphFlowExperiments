@@ -165,20 +165,27 @@ Initialization performs:
 
 For $n$ vertices, it enumerates the first $n-1$ values (there are $l^{n-1}$ choices) and determines the last value uniquely from $\sum\beta\equiv 0\pmod l$. This avoids a full $l^n$ enumeration.
 
-### 5.4 `solve_for_beta(beta)`: DFS + pruning (core)
+### 5.4 `solve_for_beta(beta)`: DFS + Pruning (Core)
 
-High-level steps:
+Overall workflow:
 
-1. validate `beta` (vertex set, value range, sum condition)
-2. compute target residues `target_residue[v]`
-3. define domains $`y_e\in\{0,\dots,k_e\}`$ for each bundle
-4. order variables by increasing domain size (small $k_e$ first)
-5. DFS assignment while maintaining `partial_sum[v]` (integer partial sums of $S(v)$)
-6. prune using “interval reachability under congruence”:
-   - compute the remaining possible contribution interval $[L,U]$ for each vertex
-   - let `need ≡ target_residue[v] - partial_sum[v] (mod l)`
-   - prune if no $t\in[L,U]$ satisfies $t\equiv \text{need}\pmod l$
-7. on success, assemble the expanded edge directions and verify `(out-in) mod l == beta`
+1. **Validity check**: verify vertex set matches; check that values are in the correct range; and ensure the total sum is 0 (mod $l$).  
+2. **Compute target residues**: for each vertex, calculate `target_residue[v]`.  
+3. **Establish variable domains**: for each edge bundle $e$, $y_e \in \{0, \dots, k_e\}$.  
+4. **Variable ordering**: sort by domain size in ascending order (i.e., smaller $k_e$ first).  
+5. **DFS search**:  
+   - **State**: `partial_sum[v]` (current sum of the integer parts of $S(v)$ contributed by assigned variables)  
+   - **Recursion**: for the current edge bundle, try each possible $y$ value, updating `partial_sum` for both endpoints.  
+6. **Pruning (interval + modular reachability)**:  
+   - For each vertex $v$, compute the reachable interval $[L,U]$ for $S(v)$ contributed by unassigned edge bundles.  
+   - Compute `need ≡ target_residue[v] - partial_sum[v] (mod l)` and check whether there exists $t \in [L,U]$ such that $t \equiv \text{need} \pmod l$.  
+   - Equivalently, check whether there exists an integer $q$ such that $L \le \text{need} + q l \le U$.  
+   - If no such $q$ exists, backtrack (prune).  
+7. **Termination and assembly**:  
+   - After all variables are assigned, verify that all vertex residues are satisfied.  
+   - Expand each edge bundle's $y$ value into individual edge directions (the first $y$ edges as $u\to v$, the remaining $k-y$ edges as $v\to u$).  
+   - Finally, check that `out_minus_in[v] % l == beta[v]` for all vertices.
+
 
 ### 5.5 `is_SZl(...)`: decision and witness
 
