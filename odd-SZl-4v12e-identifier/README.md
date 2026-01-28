@@ -82,7 +82,7 @@ The sum condition is necessary since $\sum_v(\text{out}-\text{in})=0$ for any or
 A $\beta$-orientation is an orientation of all edges such that for each vertex $v$:
 
 $$
-(\operatorname{outdeg}(v)-\operatorname{indeg}(v))\equiv \beta(v)\pmod l
+(\mathrm{outdeg}(v)-\mathrm{indeg}(v))\equiv \beta(v)\pmod l
 $$
 
 The graph $G$ is $SZ_l$ if such an orientation exists for **every** valid boundary $\beta$.
@@ -104,20 +104,20 @@ Thus we search one integer variable per vertex pair (domain size $k+1$) rather t
 
 For each bundle $e=(u,v)$ (normalized $u<v$), define:
 
-- $\operatorname{sign}(u,e)=+1$
-- $\operatorname{sign}(v,e)=-1$
+- $\mathrm{sign}(u,e)=+1$
+- $\mathrm{sign}(v,e)=-1$
 
 For each vertex:
 
 $$
-S(v)=\sum_{e\ni v}\operatorname{sign}(v,e)\cdot y_e
+S(v)=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot y_e
 $$
 
 Expanding $(2y_e-k_e)$ yields the congruence:
 
 $$
 C_v+2S(v)\equiv \beta(v)\pmod l,\qquad
-C_v=\sum_{e\ni v}\operatorname{sign}(v,e)\cdot(-k_e)
+C_v=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot(-k_e)
 $$
 
 ### 4.3 Odd modulus trick: divide by 2 in $\mathbb{Z}_l$
@@ -205,8 +205,17 @@ $$
 
 For each pair, assign a multiplicity $k_{uv}\in\{0,1,2,3\}$ and filter by:
 
-- total multiplicity: $\sum k_{uv}=12$
-- minimum degree (counting multiplicity): each degree is $\ge 4$
+- total multiplicity:
+
+$$
+\sum k_{uv}=12
+$$
+
+- minimum degree (counting multiplicity): for each vertex $v$,
+
+$$
+\mathrm{deg}(v)\ge 4
+$$
 - connectivity of the underlying simple graph (treat $k_{uv}>0$ as an edge)
 
 ### 7.2 Isomorphism reduction: canonical key over all $4!$ permutations
