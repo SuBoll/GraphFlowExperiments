@@ -12,10 +12,6 @@
 > `libpng warning: iCCP: known incorrect sRGB profile`。
 > 这通常是无害的 PNG 颜色配置警告，不会影响图像的保存或显示。
 
-> 备注: 由于 GitHub README 对行内 LaTeX 数学公式的支持不完整，
-> 部分集合大括号可能无法正确显示，请结合上下文理解。
-
-
 ---
 
 ## 0. 文件结构与放置建议
