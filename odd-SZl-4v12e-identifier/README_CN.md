@@ -1,4 +1,4 @@
-## SZ_5（奇数模）计算实验代码包：求解器 + 枚举器
+## $SZ_5$（奇数模）计算实验代码包：求解器 + 枚举器
 
 本目录用于论文 “Orientations of 10-Edge-Connected Planar Graphs and Applications”
 的计算实验与可复现性说明，包含两个脚本（建议放在同一个 GitHub 文件夹中）：
