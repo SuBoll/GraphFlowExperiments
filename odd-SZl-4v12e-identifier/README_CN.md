@@ -8,7 +8,13 @@
 
 本 README 是**主说明文件**：先整体解释两份代码在实验中的分工，再分别详细解释每个脚本的数学建模与实现流程（包括 DFS 剪枝与同构去重的具体做法），以便审阅与复现。
 
-> 备注：运行时可能看到 `libpng warning: iCCP: known incorrect sRGB profile`。这通常是 PNG 色彩配置相关警告，不影响保存与显示，可忽略。
+> Note: 运行过程中可能会看到
+> `libpng warning: iCCP: known incorrect sRGB profile`。
+> 这通常是无害的 PNG 颜色配置警告，不会影响图像的保存或显示。
+
+> Note: 由于 GitHub README 对行内 LaTeX 数学公式的支持不完整，
+> 部分集合大括号可能无法正确显示，请结合上下文理解。
+
 
 ---
 
