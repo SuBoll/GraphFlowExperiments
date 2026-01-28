@@ -70,7 +70,7 @@ python szl_odd_solver.py
 
 ---
 
-## 3. `szl_odd_solver.py`：问题定义（读者视角）
+## 3. `szl_odd_solver.py`：问题定义
 
 ### 3.1 合法边界 $\beta$
 
