@@ -82,7 +82,7 @@ python szl_odd_solver.py
 对给定 $\beta$，若存在一种对 $G$ 的定向，使得对每个顶点 $v$：
 
 $$
-(\operatorname{outdeg}(v)-\operatorname{indeg}(v))\equiv \beta(v)\pmod l
+(\mathrm{outdeg}(v)-\mathrm{indeg}(v))\equiv \beta(v)\pmod l
 $$
 
 则称该定向为一组 $\beta$-定向。
@@ -106,20 +106,20 @@ $$
 
 对边束 $e=(u,v)$（规范化 $u<v$）定义符号：
 
-- $\operatorname{sign}(u,e)=+1$
-- $\operatorname{sign}(v,e)=-1$
+- $\mathrm{sign}(u,e)=+1$
+- $\mathrm{sign}(v,e)=-1$
 
 对每个顶点定义：
 
 $$
-S(v)=\sum_{e\ni v}\operatorname{sign}(v,e)\cdot y_e
+S(v)=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot y_e
 $$
 
 把 $(2y_e-k_e)$ 展开后，可写成：
 
 $$
 C_v+2S(v)\equiv \beta(v)\pmod l,\qquad
-C_v=\sum_{e\ni v}\operatorname{sign}(v,e)\cdot(-k_e)
+C_v=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot(-k_e)
 $$
 
 ### 4.3 奇数模的关键：消去系数 2
