@@ -57,7 +57,7 @@ python generate_nonisomorphic_4v12e.py
 
 - 弹出 Matplotlib 总览图窗口（所有非同构代表元的网格图）
 - 在“运行脚本时的当前工作目录”保存 PNG 总览图：
-  - `nonisomorphic_4v12e_SZ_5_overview.png`
+  - `nonisomorphic_4v12e_overview.png`
 - 在控制台打印 $SZ_5$ 判定结果；若某图不是 $SZ_5$，会打印一个不可行的 witness $\beta$（向量形式）
 
 ### 2.2 仅运行求解器示例
