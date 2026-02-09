@@ -89,9 +89,9 @@ The parity constraint ensures that $`\gamma(v)`$ in the modeling is well-defined
 
 A $`\beta`$-orientation is an orientation of all edges such that for each vertex $`v`$:
 
-$$`
+$$
 (\mathrm{outdeg}(v)-\mathrm{indeg}(v))\equiv \beta(v)\pmod{2l}
-`$$
+$$
 
 The graph $`G`$ is $`SZ_l`$ if such an orientation exists for **every** valid boundary $`\beta`$.
 
@@ -113,33 +113,33 @@ For each edge bundle $`e=(u,v)`$ (normalized with $`u<v`$), define the sign:
 - $`\mathrm{sign}(v,e)=-1`$ ($`v`$ is the larger endpoint)
 
 For each vertex $`v`$, define **$`S(v)`$** as the signed sum of $`y`$ over incident bundles:
-$$`
+$$
 S(v)=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot y_e
-`$$
+$$
 That is: if $`v`$ is the $`u`$ end of bundle $`e`$, the contribution is $`+y_e`$; if $`v`$ is the $`v`$ end, it is $`-y_e`$.
 
 **Constant term $`C_v`$** (the "base" part when all $`y_e`$ are 0):
-$$`
+$$
 C_v=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot(-k_e)
-`$$
+$$
 where $`k_e`$ is the multiplicity of bundle $`e`$. Expanding $`2y_e-k_e`$ leads to the constraint:
-$$`
+$$
 C_v+2S(v)\equiv \beta(v)\pmod{2l}
-`$$
+$$
 
 ### 4.3 General modulus: dividing by 2 to obtain $`\gamma`$
 
 When $`l`$ is even, 2 is not invertible in $`\mathbb{Z}_{2l}`$. The parity constraint $`\beta(v)\equiv \deg(v)\pmod 2`$ ensures that $`(\beta(v)-C_v)`$ is even (mod $`2l`$). Define:
 
-$$`
+$$
 \gamma(v)=\frac{(\beta(v)-C_v)\bmod 2l}{2}\in\mathbb{Z}_l
-`$$
+$$
 
 The constraint becomes:
 
-$$`
+$$
 S(v)\equiv \gamma(v)\pmod l
-`$$
+$$
 
 In the code, the right-hand side is precomputed as `target_residue[v_idx]` (aligned with the sorted vertex list `vertices`).
 
