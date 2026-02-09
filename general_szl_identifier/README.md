@@ -113,19 +113,18 @@ For each edge bundle $`e=(u,v)`$ (normalized with $`u<v`$), define the sign:
 - $`\mathrm{sign}(v,e)=-1`$ ($`v`$ is the larger endpoint)
 
 For each vertex $`v`$, define **$`S(v)`$** as the signed sum of $`y`$ over incident bundles:
-$$
-S(v)=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot y_e
-$$
+
+$$S(v)=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot y_e$$
+
 That is: if $`v`$ is the $`u`$ end of bundle $`e`$, the contribution is $`+y_e`$; if $`v`$ is the $`v`$ end, it is $`-y_e`$.
 
 **Constant term $`C_v`$** (the "base" part when all $`y_e`$ are 0):
-$$
-C_v=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot(-k_e)
-$$
+
+$$C_v=\sum_{e\ni v}\mathrm{sign}(v,e)\cdot(-k_e)$$
+
 where $`k_e`$ is the multiplicity of bundle $`e`$. Expanding $`2y_e-k_e`$ leads to the constraint:
-$$
-C_v+2S(v)\equiv \beta(v)\pmod{2l}
-$$
+
+$$C_v+2S(v)\equiv \beta(v)\pmod{2l}$$
 
 ### 4.3 General modulus: dividing by 2 to obtain $`\gamma`$
 
@@ -248,3 +247,4 @@ This script, for **given $`n`$, $`m`$, $`l`$** (all configurable via command-lin
 - **Solver complexity**: the number of valid boundaries is roughly $`l^{n-1}`$ (subject to parity); each DFS is exponential in the worst case. This implementation targets small-to-moderate instances for experimental verification.
 - **Determinism**: vertices and bundles are sorted; isomorphism reduction uses the full canonical-key approach, so output is deterministic.
 - **Comparison with odd-modulus version**: the odd-modulus scripts can be used when $`l`$ is odd, with 2 invertible for slightly simpler logic; the general-modulus version handles both odd and even $`l`$ uniformly.
+
