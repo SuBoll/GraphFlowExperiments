@@ -1,8 +1,6 @@
 # GraphFlowExperiments
 
-This repository collects small-scale computational experiments related to
-graph flows, $SZ_l$-orientations, nowhere-zero flows, and related
-connectivity and orientation conditions in graphs.
+This repository collects small-scale computational experiments related to graph flows, orientations, and related problems in graphs.
 
 The code is organized **by topic**, with each subdirectory being
 *self-contained* and accompanied by its **own README** explaining
