@@ -15,8 +15,8 @@
 将以下文件放在同一目录：
 
 - `compute_flow_index.py`
-- `README_flow_index.md`（英文）
-- `README_flow_index_CN.md`（本文件，中文）
+- `README.md`（英文）
+- `README_CN.md`（本文件，中文）
 
 ---
 
@@ -138,3 +138,4 @@ print(f"Flow value r = {best_M + 1:.6f}")
 - 优化使用 SLSQP，约束为 $`\|f_e\|_p \ge 1`$，目标为最小化 $`\max_e \|f_e\|_p`$。多次随机重启有助于找到更优解。
 - 主要耗时在优化器；圈空间分配与可视化为 $`O(m)`$、$`O(m^2)`$ 量级。
 - 图较大时可适当增大 `repeats` 和 `maxiter`。
+
